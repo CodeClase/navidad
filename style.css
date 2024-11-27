@@ -1,0 +1,821 @@
+
+body {
+    width: 100%;
+    height: 100%;
+    --s: 75px;
+  
+    --_c: #0000, #fff 1deg 79deg, #0000 81deg;
+    --g0: conic-gradient(from 140deg at 50% 87.5%, var(--_c));
+    --g1: conic-gradient(from 140deg at 50% 81.25%, var(--_c));
+    --g2: conic-gradient(from 140deg at 50% 75%, var(--_c));
+    --g3: conic-gradient(at 10% 20%, #0000 75%, #fff 0);
+    background: var(--g0) 0 calc(var(--s) / -4),
+      var(--g0) var(--s) calc(3 * var(--s) / 4), var(--g1),
+      var(--g1) var(--s) var(--s), var(--g2) 0 calc(var(--s) / 4),
+      var(--g2) var(--s) calc(5 * var(--s) / 4),
+      var(--g3) calc(var(--s) / -10) var(--s),
+      var(--g3) calc(9 * var(--s) / 10) calc(2 * var(--s)),
+      repeating-conic-gradient(from 45deg, #a31e39 0 25%, #31570e 0 50%);
+    background-size: calc(2 * var(--s)) calc(2 * var(--s));
+}
+
+
+
+
+ /* From Uiverse.io by eslam-hany */ 
+.book {
+  position: relative;
+  border-radius: 10px;
+  width: 220px;
+  height: 300px;
+  background-color: whitesmoke;
+  -webkit-box-shadow: 1px 1px 12px #000;
+  box-shadow: 1px 1px 12px #000;
+  -webkit-transform: preserve-3d;
+  -ms-transform: preserve-3d;
+  transform: preserve-3d;
+  -webkit-perspective: 2000px;
+  perspective: 2000px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  color: #000;
+}
+
+.cover {
+  top: 0;
+  position: absolute;
+  background: linear-gradient(135deg, #6B4F32, #8B5A2B, #4E3629);  /* Degradado marrón */
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-transform-origin: 0;
+  -ms-transform-origin: 0;
+  transform-origin: 0;
+  -webkit-box-shadow: 1px 1px 12px #000;
+  box-shadow: 1px 1px 12px #000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.book:hover .cover {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-transform: rotatey(-80deg);
+  -ms-transform: rotatey(-80deg);
+  transform: rotatey(-80deg);
+}
+
+
+p {
+  font-size: 20px;
+  font-weight: bolder;
+} 
+
+a {
+    text-decoration: none;
+}
+
+/* Centrar el contenedor en la página */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    gap: 200px;
+}
+
+/* Establecer un contenedor con grid */
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);  /* Tres columnas */
+    gap: 150px;  /* Espacio entre los elementos */
+    justify-items: center;  /* Centrar los elementos en cada celda */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* From Uiverse.io by marcelodolza */ 
+.button {
+  --white: #ffe7ff;
+  --purple-100: #fdb1b1;
+  --purple-200: #ff9090;
+  --purple-300: #f28989;
+  --purple-400: #e22626;
+  --purple-500: #832b2b;
+  --radius: 18px;
+
+  border-radius: var(--radius);
+  outline: none;
+  cursor: pointer;
+  font-size: 23px;
+  font-family: Arial;
+  background: transparent;
+  letter-spacing: -1px;
+  border: 0;
+  position: relative;
+  width: 220px;
+  height: 80px;
+  transform: rotate(353deg) skewX(4deg);
+}
+
+.bg {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  filter: blur(1px);
+}
+.bg::before,
+.bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: calc(var(--radius) * 1.1);
+  background: var(--purple-500);
+}
+.bg::before {
+  filter: blur(5px);
+  transition: all 0.3s ease;
+  box-shadow:
+    -7px 6px 0 0 rgba(155, 75, 75, 0.4),
+    -14px 12px 0 0 rgba(155, 75, 75, 0.3),
+    -21px 18px 4px 0 rgba(155, 75, 75, 0.25),
+    -28px 24px 8px 0 rgba(155, 75, 75, 0.15),
+    -35px 30px 12px 0 rgba(155, 75, 75, 0.12),
+    -42px 36px 16px 0 rgba(155, 75, 75, 0.08),
+    -56px 42px 20px 0 rgba(155, 75, 75, 0.05);
+}
+
+.wrap {
+  border-radius: inherit;
+  overflow: hidden;
+  height: 100%;
+  transform: translate(6px, -6px);
+  padding: 3px;
+  background: linear-gradient(
+    to bottom,
+    var(--purple-100) 0%,
+    var(--purple-400) 100%
+  );
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.outline {
+  position: absolute;
+  overflow: hidden;
+  inset: 0;
+  opacity: 0;
+  outline: none;
+  border-radius: inherit;
+  transition: all 0.4s ease;
+}
+.outline::before {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  width: 120px;
+  height: 300px;
+  margin: auto;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    white 50%,
+    transparent 100%
+  );
+  animation: spin 3s linear infinite;
+  animation-play-state: paused;
+}
+
+.content {
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  position: relative;
+  height: 100%;
+  gap: 16px;
+  border-radius: calc(var(--radius) * 0.85);
+  font-weight: 600;
+  transition: all 0.3s ease;
+  background: linear-gradient(
+    to bottom,
+    var(--purple-300) 0%,
+    var(--purple-400) 100%
+  );
+  box-shadow:
+    inset -2px 12px 11px -5px var(--purple-200),
+    inset 1px -3px 11px 0px rgb(0 0 0 / 35%);
+}
+.content::before {
+  content: "";
+  inset: 0;
+  position: absolute;
+  z-index: 10;
+  width: 80%;
+  top: 45%;
+  bottom: 35%;
+  opacity: 0.7;
+  margin: auto;
+  background: linear-gradient(to bottom, transparent, var(--purple-400));
+  filter: brightness(1.3) blur(5px);
+}
+
+.char {
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.char span {
+  display: block;
+  color: transparent;
+  position: relative;
+}
+.char span:nth-child(6) {
+  margin-left: 5px;
+}
+
+.char.state-1 span {
+  animation: charAppear 1.2s ease backwards calc(var(--i) * 0.03s);
+}
+.char.state-1 span::before,
+.char span::after {
+  content: attr(data-label);
+  position: absolute;
+  color: var(--white);
+  text-shadow: -1px 1px 2px var(--purple-500);
+  left: 0;
+}
+.char span::before {
+  opacity: 0;
+  transform: translateY(-100%);
+}
+.char.state-2 {
+  position: absolute;
+  left: 80px;
+}
+.char.state-2 span::after {
+  opacity: 1;
+}
+
+.icon {
+  animation: resetArrow 0.8s cubic-bezier(0.7, -0.5, 0.3, 1.2) forwards;
+  z-index: 10;
+}
+.icon div,
+.icon div::before,
+.icon div::after {
+  height: 3px;
+  border-radius: 1px;
+  background-color: var(--white);
+}
+.icon div::before,
+.icon div::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  transform-origin: center right;
+  width: 14px;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+}
+.icon div {
+  position: relative;
+  width: 24px;
+  box-shadow: -2px 2px 5px var(--purple-400);
+  transform: scale(0.9);
+  background: linear-gradient(to bottom, var(--white), var(--purple-100));
+  animation: swingArrow 1s ease-in-out infinite;
+  animation-play-state: paused;
+}
+.icon div::before {
+  transform: rotate(44deg);
+  top: 1px;
+  box-shadow: 1px -2px 3px -1px var(--purple-400);
+  animation: rotateArrowLine 1s linear infinite;
+  animation-play-state: paused;
+}
+.icon div::after {
+  bottom: 1px;
+  transform: rotate(316deg);
+  box-shadow: -2px 2px 3px 0 var(--purple-400);
+  background: linear-gradient(200deg, var(--white), var(--purple-100));
+  animation: rotateArrowLine2 1s linear infinite;
+  animation-play-state: paused;
+}
+
+.path {
+  position: absolute;
+  z-index: 12;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  stroke-dasharray: 150 480;
+  stroke-dashoffset: 150;
+  pointer-events: none;
+}
+
+.splash {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  stroke-dasharray: 60 60;
+  stroke-dashoffset: 60;
+  transform: translate(-17%, -31%);
+  stroke: var(--purple-300);
+}
+
+/** STATES */
+
+.button:hover .words {
+  opacity: 1;
+}
+.button:hover .words span {
+  animation-play-state: running;
+}
+
+.button:hover .char.state-1 span::before {
+  animation: charAppear 0.7s ease calc(var(--i) * 0.03s);
+}
+
+.button:hover .char.state-1 span::after {
+  opacity: 1;
+  animation: charDisappear 0.7s ease calc(var(--i) * 0.03s);
+}
+
+.button:hover .wrap {
+  transform: translate(8px, -8px);
+}
+
+.button:hover .outline {
+  opacity: 1;
+}
+
+.button:hover .outline::before,
+.button:hover .icon div::before,
+.button:hover .icon div::after,
+.button:hover .icon div {
+  animation-play-state: running;
+}
+
+.button:active .bg::before {
+  filter: blur(5px);
+  opacity: 0.7;
+  box-shadow:
+    -7px 6px 0 0 rgb(115 75 155 / 40%),
+    -14px 12px 0 0 rgb(115 75 155 / 25%),
+    -21px 18px 4px 0 rgb(115 75 155 / 15%);
+}
+.button:active .content {
+  box-shadow:
+    inset -1px 12px 8px -5px rgba(71, 0, 137, 0.4),
+    inset 0px -3px 8px 0px var(--purple-200);
+}
+
+.button:active .words,
+.button:active .outline {
+  opacity: 0;
+}
+
+.button:active .wrap {
+  transform: translate(3px, -3px);
+}
+
+.button:active .splash {
+  animation: splash 0.8s cubic-bezier(0.3, 0, 0, 1) forwards 0.05s;
+}
+
+.button:focus .path {
+  animation: path 1.6s ease forwards 0.2s;
+}
+
+.button:focus .icon {
+  animation: arrow 1s cubic-bezier(0.7, -0.5, 0.3, 1.5) forwards;
+}
+
+.char.state-2 span::after,
+.button:focus .char.state-1 span {
+  animation: charDisappear 0.5s ease forwards calc(var(--i) * 0.03s);
+}
+
+.button:focus .char.state-2 span::after {
+  animation: charAppear 1s ease backwards calc(var(--i) * 0.03s);
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes charAppear {
+  0% {
+    transform: translateY(50%);
+    opacity: 0;
+    filter: blur(20px);
+  }
+  20% {
+    transform: translateY(70%);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-15%);
+    opacity: 1;
+    filter: blur(0);
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes charDisappear {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-70%);
+    opacity: 0;
+    filter: blur(3px);
+  }
+}
+
+@keyframes arrow {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(60px);
+    opacity: 0;
+  }
+  51% {
+    transform: translateX(-200px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(-128px);
+    opacity: 1;
+  }
+}
+
+@keyframes swingArrow {
+  50% {
+    transform: translateX(5px) scale(0.9);
+  }
+}
+
+@keyframes rotateArrowLine {
+  50% {
+    transform: rotate(30deg);
+  }
+  80% {
+    transform: rotate(55deg);
+  }
+}
+
+@keyframes rotateArrowLine2 {
+  50% {
+    transform: rotate(330deg);
+  }
+  80% {
+    transform: rotate(300deg);
+  }
+}
+
+@keyframes resetArrow {
+  0% {
+    transform: translateX(-128px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes path {
+  from {
+    stroke: white;
+  }
+  to {
+    stroke-dashoffset: -480;
+    stroke: #f9c6fe;
+  }
+}
+
+@keyframes splash {
+  to {
+    stroke-dasharray: 2 60;
+    stroke-dashoffset: -60;
+  }
+}
+
+
+/* From Uiverse.io by Nawsome */ 
+.wheel-and-hamster {
+  --dur: 1s;
+  position: relative;
+  width: 12em;
+  height: 12em;
+  font-size: 14px;
+}
+
+.wheel,
+.hamster,
+.hamster div,
+.spoke {
+  position: absolute;
+}
+
+.wheel,
+.spoke {
+  border-radius: 50%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.wheel {
+  background: radial-gradient(100% 100% at center,hsla(0,0%,60%,0) 47.8%,hsl(0,0%,60%) 48%);
+  z-index: 2;
+}
+
+.hamster {
+  animation: hamster var(--dur) ease-in-out infinite;
+  top: 50%;
+  left: calc(50% - 3.5em);
+  width: 7em;
+  height: 3.75em;
+  transform: rotate(4deg) translate(-0.8em,1.85em);
+  transform-origin: 50% 0;
+  z-index: 1;
+}
+
+.hamster__head {
+  animation: hamsterHead var(--dur) ease-in-out infinite;
+  background: hsl(30,90%,55%);
+  border-radius: 70% 30% 0 100% / 40% 25% 25% 60%;
+  box-shadow: 0 -0.25em 0 hsl(30,90%,80%) inset,
+		0.75em -1.55em 0 hsl(30,90%,90%) inset;
+  top: 0;
+  left: -2em;
+  width: 2.75em;
+  height: 2.5em;
+  transform-origin: 100% 50%;
+}
+
+.hamster__ear {
+  animation: hamsterEar var(--dur) ease-in-out infinite;
+  background: hsl(0,90%,85%);
+  border-radius: 50%;
+  box-shadow: -0.25em 0 hsl(30,90%,55%) inset;
+  top: -0.25em;
+  right: -0.25em;
+  width: 0.75em;
+  height: 0.75em;
+  transform-origin: 50% 75%;
+}
+
+.hamster__eye {
+  animation: hamsterEye var(--dur) linear infinite;
+  background-color: hsl(0,0%,0%);
+  border-radius: 50%;
+  top: 0.375em;
+  left: 1.25em;
+  width: 0.5em;
+  height: 0.5em;
+}
+
+.hamster__nose {
+  background: hsl(0,90%,75%);
+  border-radius: 35% 65% 85% 15% / 70% 50% 50% 30%;
+  top: 0.75em;
+  left: 0;
+  width: 0.2em;
+  height: 0.25em;
+}
+
+.hamster__body {
+  animation: hamsterBody var(--dur) ease-in-out infinite;
+  background: hsl(30,90%,90%);
+  border-radius: 50% 30% 50% 30% / 15% 60% 40% 40%;
+  box-shadow: 0.1em 0.75em 0 hsl(30,90%,55%) inset,
+		0.15em -0.5em 0 hsl(30,90%,80%) inset;
+  top: 0.25em;
+  left: 2em;
+  width: 4.5em;
+  height: 3em;
+  transform-origin: 17% 50%;
+  transform-style: preserve-3d;
+}
+
+.hamster__limb--fr,
+.hamster__limb--fl {
+  clip-path: polygon(0 0,100% 0,70% 80%,60% 100%,0% 100%,40% 80%);
+  top: 2em;
+  left: 0.5em;
+  width: 1em;
+  height: 1.5em;
+  transform-origin: 50% 0;
+}
+
+.hamster__limb--fr {
+  animation: hamsterFRLimb var(--dur) linear infinite;
+  background: linear-gradient(hsl(30,90%,80%) 80%,hsl(0,90%,75%) 80%);
+  transform: rotate(15deg) translateZ(-1px);
+}
+
+.hamster__limb--fl {
+  animation: hamsterFLLimb var(--dur) linear infinite;
+  background: linear-gradient(hsl(30,90%,90%) 80%,hsl(0,90%,85%) 80%);
+  transform: rotate(15deg);
+}
+
+.hamster__limb--br,
+.hamster__limb--bl {
+  border-radius: 0.75em 0.75em 0 0;
+  clip-path: polygon(0 0,100% 0,100% 30%,70% 90%,70% 100%,30% 100%,40% 90%,0% 30%);
+  top: 1em;
+  left: 2.8em;
+  width: 1.5em;
+  height: 2.5em;
+  transform-origin: 50% 30%;
+}
+
+.hamster__limb--br {
+  animation: hamsterBRLimb var(--dur) linear infinite;
+  background: linear-gradient(hsl(30,90%,80%) 90%,hsl(0,90%,75%) 90%);
+  transform: rotate(-25deg) translateZ(-1px);
+}
+
+.hamster__limb--bl {
+  animation: hamsterBLLimb var(--dur) linear infinite;
+  background: linear-gradient(hsl(30,90%,90%) 90%,hsl(0,90%,85%) 90%);
+  transform: rotate(-25deg);
+}
+
+.hamster__tail {
+  animation: hamsterTail var(--dur) linear infinite;
+  background: hsl(0,90%,85%);
+  border-radius: 0.25em 50% 50% 0.25em;
+  box-shadow: 0 -0.2em 0 hsl(0,90%,75%) inset;
+  top: 1.5em;
+  right: -0.5em;
+  width: 1em;
+  height: 0.5em;
+  transform: rotate(30deg) translateZ(-1px);
+  transform-origin: 0.25em 0.25em;
+}
+
+.spoke {
+  animation: spoke var(--dur) linear infinite;
+  background: radial-gradient(100% 100% at center,hsl(0,0%,60%) 4.8%,hsla(0,0%,60%,0) 5%),
+		linear-gradient(hsla(0,0%,55%,0) 46.9%,hsl(0,0%,65%) 47% 52.9%,hsla(0,0%,65%,0) 53%) 50% 50% / 99% 99% no-repeat;
+}
+
+/* Animations */
+@keyframes hamster {
+  from, to {
+    transform: rotate(4deg) translate(-0.8em,1.85em);
+  }
+
+  50% {
+    transform: rotate(0) translate(-0.8em,1.85em);
+  }
+}
+
+@keyframes hamsterHead {
+  from, 25%, 50%, 75%, to {
+    transform: rotate(0);
+  }
+
+  12.5%, 37.5%, 62.5%, 87.5% {
+    transform: rotate(8deg);
+  }
+}
+
+@keyframes hamsterEye {
+  from, 90%, to {
+    transform: scaleY(1);
+  }
+
+  95% {
+    transform: scaleY(0);
+  }
+}
+
+@keyframes hamsterEar {
+  from, 25%, 50%, 75%, to {
+    transform: rotate(0);
+  }
+
+  12.5%, 37.5%, 62.5%, 87.5% {
+    transform: rotate(12deg);
+  }
+}
+
+@keyframes hamsterBody {
+  from, 25%, 50%, 75%, to {
+    transform: rotate(0);
+  }
+
+  12.5%, 37.5%, 62.5%, 87.5% {
+    transform: rotate(-2deg);
+  }
+}
+
+@keyframes hamsterFRLimb {
+  from, 25%, 50%, 75%, to {
+    transform: rotate(50deg) translateZ(-1px);
+  }
+
+  12.5%, 37.5%, 62.5%, 87.5% {
+    transform: rotate(-30deg) translateZ(-1px);
+  }
+}
+
+@keyframes hamsterFLLimb {
+  from, 25%, 50%, 75%, to {
+    transform: rotate(-30deg);
+  }
+
+  12.5%, 37.5%, 62.5%, 87.5% {
+    transform: rotate(50deg);
+  }
+}
+
+@keyframes hamsterBRLimb {
+  from, 25%, 50%, 75%, to {
+    transform: rotate(-60deg) translateZ(-1px);
+  }
+
+  12.5%, 37.5%, 62.5%, 87.5% {
+    transform: rotate(20deg) translateZ(-1px);
+  }
+}
+
+@keyframes hamsterBLLimb {
+  from, 25%, 50%, 75%, to {
+    transform: rotate(20deg);
+  }
+
+  12.5%, 37.5%, 62.5%, 87.5% {
+    transform: rotate(-60deg);
+  }
+}
+
+@keyframes hamsterTail {
+  from, 25%, 50%, 75%, to {
+    transform: rotate(30deg) translateZ(-1px);
+  }
+
+  12.5%, 37.5%, 62.5%, 87.5% {
+    transform: rotate(10deg) translateZ(-1px);
+  }
+}
+
+@keyframes spoke {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(-1turn);
+  }
+}
